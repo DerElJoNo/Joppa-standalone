@@ -4,7 +4,7 @@ public class Inventory
 {
 	Item[] inventory;
     final int inventorysize = 9;
-	public boolean full = full();
+	public boolean full;
     
 	
     public Inventory()

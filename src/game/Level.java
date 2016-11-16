@@ -9,7 +9,10 @@ public class Level extends World
 	Joppa joppa;
 	Start start = new Start();
 	    
-	   
+	public Level() 
+	{
+		joppa = new Joppa();
+	}
 	    
 	public void newWallRow(int x1, int y1, int x2, int y2)
 	{
@@ -71,11 +74,7 @@ public class Level extends World
     
     public void setStandart()
     {
-        Lifebar lifebar = new Lifebar();
-        addObject(lifebar, unit(5), unit(1));
-        
-        Airbar airbar = new Airbar();
-        addObject(airbar, getWidth()-(unit(5)), unit(1));
+    	
         
         for(int a= MIDDLE; a<getWidth(); a = a + SIZE)
         {
@@ -89,11 +88,7 @@ public class Level extends World
             addObject(new Wall(), getWidth() - MIDDLE, b);
         }
         
-        for(int i=0; i< joppa.inv.size(); i++)
-        {
-            addObject(new InventoryArea(i), (getWidth()/2) - (joppa.inv.size() * SIZE / 2) + unit(i), unit(1));
-        }
-        addObject(new CreditCounter(joppa), getWidth()/2 + 8*SIZE, unit(1));
+        
     }
 	    
     

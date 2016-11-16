@@ -17,15 +17,7 @@ public class Actor
 	
 	public Actor()
 	{
-		
-		try
-		{
-			image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("graphics/Joppa_links.png"));
-		}
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
+		setImage("graphics/Joppa_links.png");
 	}
 	
 	

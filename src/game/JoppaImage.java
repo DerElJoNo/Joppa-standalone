@@ -37,7 +37,7 @@ public class JoppaImage extends BufferedImage
 	
 	public JoppaImage(String string, int size, Color foreground, Color background)
 	{
-		
+		super(size, size, size);
 	}
 	
 	

@@ -254,7 +254,7 @@ public class Joppa extends Actor
                 }
             }
             left = true;
-            setImage("Joppa_links.png");
+            setImage("graphics/Joppa_links.png");
         }
 
         if(Keyboard.isKeyDown(KeyEvent.VK_RIGHT))
@@ -278,7 +278,7 @@ public class Joppa extends Actor
                 }
             }
             left = false;
-            setImage("Joppa_rechts.png");
+            setImage("graphics/Joppa_rechts.png");
         }
 
         if(Keyboard.isKeyDown(KeyEvent.VK_UP))
