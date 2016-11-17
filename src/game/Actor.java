@@ -130,7 +130,7 @@ public class Actor
 		for(int a=0; a<world.actors.length; a++)
 		{
 			
-			if(world.actors[a]!=this && world.actors[a].getClass()==cls)
+			if(world.actors[a]!=this && cls.isInstance(world.actors[a]))
 			{
 				Actor b = world.actors[a];
 				
