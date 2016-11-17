@@ -6,5 +6,6 @@ public class Ladder extends Block implements Unrushthroughable
     {
         permeable = true;
         gravitation = false;
+        setImage("graphics/Leiter.png");
     } 
 }

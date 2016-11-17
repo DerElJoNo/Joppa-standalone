@@ -2,9 +2,12 @@ package game;
 
 public class Door extends Block implements Unrushthroughable
 {
-
-	public boolean permeable = false;
-
+	public Door()
+	{
+		setImage("graphics/Tür(geschlossen).png");
+		permeable = false;
+	}
+	
 	public void open()
     {
         permeable = true;

@@ -4,6 +4,11 @@ import java.awt.event.KeyEvent;
 
 public class FinishingPost extends Actor
 {
+	public FinishingPost()
+	{
+		setImage("graphics/Ziel.png");
+	}
+	
 	public void act() 
     {
         if(getOneIntersectingObject(Joppa.class)!=null && Keyboard.isKeyDown(KeyEvent.VK_O))
