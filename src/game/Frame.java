@@ -62,8 +62,8 @@ public class Frame extends JFrame
 		for(int i=0; i<a.length; i++)
 		{
 			Actor actor = a[i];
-			f.drawImage(actor.image, transformX(world, actor.x) - actor.image.getWidth(null),
-			transformX(world, actor.y) - actor.image.getHeight(null), null);
+			f.drawImage(actor.image, transformX(world, actor.x) - actor.image.getWidth(null)/2,
+			transformY(world, actor.y) - actor.image.getHeight(null)/2, null);
 			
 			a[i] = actor;
 		}

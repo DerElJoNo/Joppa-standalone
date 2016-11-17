@@ -23,7 +23,7 @@ public class Joppa extends Actor
         inv = new Inventory();
     }
     
-    public Dress[] getRüstung()
+    public Dress[] getArmor()
     {
         Dress[] dress = {boots, pants, top, helmet};
         return dress;
@@ -355,7 +355,8 @@ public class Joppa extends Actor
      */
     public void fall()
     {
-        if(getOneIntersectingObject(Ladder.class)!=null || getOneIntersectingObject(Water.class)!=null)
+        //TODO Unrushthroughable
+    	if(getOneIntersectingObject(Ladder.class)!=null || getOneIntersectingObject(Water.class)!=null)
         {
             return;
         }
@@ -370,8 +371,6 @@ public class Joppa extends Actor
                 if(i == V || v != null)
                 {
                     setLocation(getX(), getY()+i);
-                    u = null;
-                    v = null;
                     return;
                 }
             }

@@ -16,7 +16,7 @@ public class Main
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		frame.getContentPane().setBackground(Color.BLACK);
-		frame.setUndecorated(true);
+		frame.setUndecorated(false);
 		frame.setVisible(true);
 		
 		frame.makeBS();
@@ -59,15 +59,4 @@ public class Main
 		}
 		
 	}
-
-
-
-
-	
-	
-	
-	
-	
-
-	
 }
