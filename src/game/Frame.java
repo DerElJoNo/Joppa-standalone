@@ -46,12 +46,39 @@ public class Frame extends JFrame
 		setLifebar(w, g);
 		setAirbar(w, g);
 		setCreditcounter(w, g);
+		setInventory(w, g);
 	}
 	
 	
 
 	
-	
+	public void setInventory(World world, Graphics f)
+	{
+		 Level l = (Level)world;
+	     Joppa j = l.joppa;
+	     BufferedImage image = null;
+	     int size = 16;
+	     try
+		 {
+			 image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("graphics/Inventar.png"));
+		 }
+		 catch (IOException e)
+		 {
+			 e.printStackTrace();
+		 }   
+	     
+	     for(int i=0; i< j.inv.size(); i++)
+	     {
+	    	 Item item = j.inv.inventory[i];
+	    	 f.drawImage(image, transformX(world, 0) + world.getWidth()/2 - (j.inv.size() * size / 2) + size * i,
+	    	 transformY(world, 0) + size, null);
+	    	 if(item!=null)
+	    	 {
+	    		 f.drawImage(item.itemPicture, transformX(world, 0) + world.getWidth()/2 - (j.inv.size() * size / 2) + size * i,
+	    		 transformY(world, 0) + size, null);
+	    	 }
+	     }
+	}
 	
 	public void setBackground(World world, Graphics f)
 	{

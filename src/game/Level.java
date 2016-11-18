@@ -74,8 +74,6 @@ public class Level extends World
     
     public void setStandart()
     {
-    	
-        
         for(int a= MIDDLE; a<getWidth(); a = a + SIZE)
         {
             addObject(new Wall(), a, MIDDLE);
@@ -87,8 +85,6 @@ public class Level extends World
             addObject(new Wall(), MIDDLE, b);
             addObject(new Wall(), getWidth() - MIDDLE, b);
         }
-        
-        
     }
 	    
     
