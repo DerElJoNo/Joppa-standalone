@@ -1,9 +1,13 @@
 package game;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 public class Frame extends JFrame
@@ -41,6 +45,7 @@ public class Frame extends JFrame
 		setActors(w, g);
 		setLifebar(w, g);
 		setAirbar(w, g);
+		setCreditcounter(w, g);
 	}
 	
 	
@@ -124,6 +129,47 @@ public class Frame extends JFrame
 		f.fillRect(x + world.WIDTH - unit* 4 - 101, y+ unit*1 + 1,air,14);
 	}
 	
+	public void setCreditcounter(World world, Graphics f)
+	{
+		Level l = (Level) world;
+		float credits = l.joppa.credits;
+        int unit = 16;
+		int x = transformX(world, 0) + unit*43;
+        int y = transformY(world, 0) + unit*1;
+        Font font = new Font("MONOSPACED", Font.PLAIN, 16);
+		
+        BufferedImage i = null;
+		try
+		{
+			i = ImageIO.read(getClass().getClassLoader().getResourceAsStream("graphics/Münze.gif"));
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+        
+		f.setColor(Color.WHITE);
+        f.fillRect(x - 80 + i.getWidth(),y , 80, 16);
+        f.drawImage(i, x, y , null);
+        
+        f.setColor(Color.BLACK);
+        f.setFont(font);
+        if(credits < 1000)
+        {
+            String s = ""+(int)credits;
+        	f.drawString(s, x - 80 + i.getWidth(), y + font.getSize()-2);
+        }
+        if(credits >= 1000 && credits < 1000000)
+        {
+        	String s = ""+credits/1000 + " K";
+        	f.drawString(s, x - 80 + i.getWidth(), y + font.getSize()-2);
+        }
+        if(credits >= 1000000)
+        {
+        	String s = ""+credits/1000000 + " Mio.";
+        	f.drawString(s, x - 80 + i.getWidth(), y + font.getSize()-2);
+        }
+	}
 	
 	public static Actor[] getActors(World w)
 	{
