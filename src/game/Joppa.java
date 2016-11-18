@@ -355,7 +355,6 @@ public class Joppa extends Actor
      */
     public void fall()
     {
-        //TODO Unrushthroughable
     	if(getOneIntersectingObject(Ladder.class)!=null || getOneIntersectingObject(Water.class)!=null)
         {
             return;
