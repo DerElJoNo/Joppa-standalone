@@ -1,11 +1,17 @@
 package game;
 
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
 public class Level extends World
 {
 	public int MIDDLE = SIZE / 2;
 	int x;
 	int y;
 	int level;
+	BufferedImage image;
 	Joppa joppa;
 	Start start = new Start();
 	    
@@ -91,5 +97,17 @@ public class Level extends World
     public Joppa getJoppa()
     {
         return joppa;
+    }
+    
+    public void setImage(String s)
+    {
+    	try
+		{
+			image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("graphics/"+s));
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
     }
 }

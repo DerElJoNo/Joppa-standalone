@@ -8,14 +8,7 @@ public class World
 {
 	public World()
 	{
-		try
-		{
-			image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("graphics/no1.jpg"));
-		}
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
+		
 	}
 
 	final public int SIZE = 16;
