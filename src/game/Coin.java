@@ -13,7 +13,7 @@ public class Coin extends Actor
     public Coin(int value)
     {
         this.value = value;
-        setImage("graphics/Münze.gif");
+        setImage("Münze.gif");
     }
     
 }

@@ -4,21 +4,21 @@ public class Door extends Block implements Unrushthroughable
 {
 	public Door()
 	{
-		setImage("graphics/Tür(geschlossen).png");
+		setImage("Tür(geschlossen).png");
 		permeable = false;
 	}
 	
 	public void open()
     {
         permeable = true;
-        setImage("graphics/Tür(geöffnet).png");
+        setImage("Tür(geöffnet).png");
     }
     
     
     public void close()
     {
         permeable = false;
-        setImage("graphics/Tür(geschlossen).png");
+        setImage("Tür(geschlossen).png");
     }
 
 }

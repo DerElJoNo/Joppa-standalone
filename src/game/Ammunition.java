@@ -9,7 +9,7 @@ public class Ammunition extends Block
     {
         R= Rotation;
         permeable = true;
-        setImage("graphics/Munition.gif");
+        setImage("Munition.gif");
     }
     
    

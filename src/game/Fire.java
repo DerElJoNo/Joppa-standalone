@@ -18,19 +18,19 @@ public class Fire extends Block
     {
         if(getOneObjectAtOffset(16,0,Fire.class)!=null)
         {
-            setImage("graphics/Feuer(links begrenzt).png");
+            setImage("Feuer(links begrenzt).png");
         }
         if(getOneObjectAtOffset(-16,0,Fire.class)!=null)
         {
-            setImage("graphics/Feuer(rechts begrenzt).png");
+            setImage("Feuer(rechts begrenzt).png");
         }
         if(getOneObjectAtOffset(16,0,Fire.class)!=null && getOneObjectAtOffset(-16,0,Fire.class)!=null)
         {
-            setImage("graphics/Feuer(unbegrenzt).png");
+            setImage("Feuer(unbegrenzt).png");
         }
         else
         {
-        	setImage("graphics/Feuer(liks+rechts begrenzt).png");
+        	setImage("Feuer(liks+rechts begrenzt).png");
         }
     }
 }

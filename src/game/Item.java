@@ -15,7 +15,7 @@ public class Item extends Actor
     {
     	try
 		 {
-			 itemPicture = ImageIO.read(getClass().getClassLoader().getResourceAsStream(s));
+			 itemPicture = ImageIO.read(getClass().getClassLoader().getResourceAsStream("graphics/"+s));
 		 }
 		 catch (IOException e)
 		 {

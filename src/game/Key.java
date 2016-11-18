@@ -4,7 +4,7 @@ public class Key extends Item
 {
 	public Key()
 	{
-		setImage("graphics/Schlüssel.png");
-		setItemPicture("graphics/Schlüssel(Item).png");
+		setImage("Schlüssel.png");
+		setItemPicture("Schlüssel(Item).png");
 	}
 }

@@ -17,7 +17,7 @@ public class Actor
 	
 	public Actor()
 	{
-		setImage("graphics/Joppa_links.png");
+		setImage("Joppa_links.png");
 	}
 	
 	
@@ -25,7 +25,7 @@ public class Actor
 	{
 		try
 		{
-			image = ImageIO.read(getClass().getClassLoader().getResourceAsStream(path));
+			image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("graphics/"+path));
 		}
 		catch (IOException e)
 		{

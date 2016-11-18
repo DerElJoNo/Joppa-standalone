@@ -4,6 +4,6 @@ public class Start extends Actor
 {
 	public Start()
 	{
-		setImage("graphics/Start.png");
+		setImage("Start.png");
 	}
 }

@@ -10,6 +10,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
+import game.Levels.No1;
+
 public class Frame extends JFrame
 {
 	
@@ -82,7 +84,8 @@ public class Frame extends JFrame
 	
 	public void setBackground(World world, Graphics f)
 	{
-		f.drawImage(world.image, transformX(world, 0), transformY(world, 0), null);
+		Level l = (Level)world;
+		f.drawImage(l.image, transformX(world, 0), transformY(world, 0), null);
 	}
 	
 	public void setActors(World world, Graphics f)

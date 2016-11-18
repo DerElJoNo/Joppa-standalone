@@ -6,7 +6,7 @@ public class FinishingPost extends Actor
 {
 	public FinishingPost()
 	{
-		setImage("graphics/Ziel.png");
+		setImage("Ziel.png");
 	}
 	
 	public void act() 
