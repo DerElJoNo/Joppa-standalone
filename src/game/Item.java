@@ -1,18 +1,10 @@
 package game;
 
+import java.awt.image.BufferedImage;
+
 public class Item extends Actor
 {
 	public boolean food;
-    public JoppaImage itemPicture;
+    public BufferedImage itemPicture;
     public int foodpoints;
-    
-    public JoppaImage getItemPicture()
-    {
-        return itemPicture;
-    }
-    
-    public void setItemPicture(String x)
-    {
-        itemPicture = new JoppaImage(x);
-    }
 }

@@ -4,12 +4,6 @@ public class SetStandart extends Level
 {
 	public void setStandart()
     {
-    	Lifebar lifebar = new Lifebar();
-        addObject(lifebar, unit(5), unit(1));
-        
-        Airbar airbar = new Airbar();
-        addObject(airbar, getWidth()-(unit(5)), unit(1));
-        
         for(int a= MIDDLE; a<getWidth(); a = a + SIZE)
         {
             addObject(new Wall(), a, MIDDLE);
