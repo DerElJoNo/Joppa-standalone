@@ -121,10 +121,12 @@ public class World
 			list[i]=actors[i];
 		}
 		
-		for(int i=pos; i<actors.length; i++)
+		for(int i=pos; i<actors.length-1; i++)
 		{
 			list[i]=actors[i+1];
 		}
+		
+		actors=list;
 	}
 	
 }
