@@ -1,10 +1,17 @@
-package game;
+package game.Levels;
+
+import game.Door;
+import game.FinishingPost;
+import game.Key;
+import game.Level;
+import game.Wall;
 
 public class No1 extends Level
 {
     public No1()
     {
-        setLevel(1);  
+        setImage("No1.jpg");
+    	setLevel(1);  
         setStandart();
         no1();
         setPlayer(unit(51), unit(34));  

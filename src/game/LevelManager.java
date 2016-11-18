@@ -3,6 +3,8 @@ package game;
 import java.util.ArrayList;
 import java.util.List;
 
+import game.Levels.*;
+
 public class LevelManager
 {
 
@@ -26,6 +28,8 @@ public class LevelManager
     {
         levelList = new ArrayList<Level>();
         levelList.add(0, new No1()); // Level 1
+        levelList.add(1, new No2()); // Level 2
+        levelList.add(1, new No3()); // Level 3
     }
     
     
