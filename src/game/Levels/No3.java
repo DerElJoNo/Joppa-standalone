@@ -13,7 +13,7 @@ public class No3 extends Level
 {
     public No3()
     { 
-        setImage("No3.png");
+        setImage("no2.jpg");
     	setLevel(3);     
         setStandart();  
         no3();

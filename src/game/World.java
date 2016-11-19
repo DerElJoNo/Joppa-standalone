@@ -1,29 +1,13 @@
 package game;
 
-import java.awt.Image;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 public class World
 {
-	public World()
-	{
-		
-	}
-
 	final public int SIZE = 16;
 	final public int HEIGHT = 36*SIZE;
 	final public int WIDTH = 56*SIZE;
 	
-	public Image image;
-	
 	
 	public Actor[] actors = new Actor[0];
-	
-	
-
-	
-	
 	
 	int getSize()
 	{

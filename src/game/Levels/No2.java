@@ -13,10 +13,10 @@ public class No2 extends Level
 {
 	public No2()
     { 
-        setImage("No2.png");
+        setImage("no2.jpg");
 		setLevel(2);
-        setStandart(); 
         no2();
+        setStandart(); 
         setPlayer(unit(30), unit(34));  
     }
     
