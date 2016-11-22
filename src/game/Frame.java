@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import game.Levels.No1;
@@ -17,7 +18,7 @@ public class Frame extends JFrame
 	
 	private static final long serialVersionUID = -9213211594897249162L;
 	private BufferStrategy bs;
-	public static World w = new No1();
+	public static World w = new No1();//TODO Level Organisieren
 	
 	
 	public Frame()
@@ -50,6 +51,19 @@ public class Frame extends JFrame
 		setCreditcounter(w, g);
 		setInventory(w, g);
 	}
+	public void calculate()
+	{
+		
+		if(Main.FrameStatus == 1)
+		{
+			Actor[] a = Frame.w.actors;
+			for(int i=0; i<a.length; i++)
+			{
+				a[i].act();
+			}
+		}
+	}
+
 	
 	
 

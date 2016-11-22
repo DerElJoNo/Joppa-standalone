@@ -9,6 +9,9 @@ import javax.swing.JFrame;
 
 public class Main
 {
+
+
+	public static int FrameStatus = 0;
 	public static void main(String[] args)
 	{
 		
@@ -24,15 +27,12 @@ public class Main
 		
 		while(true)
 		{
-			calculate();
+			frame.calculate();
 			
 			frame.repaint();
 			
 			pause();
 		}
-		
-		
-		
 	}
 
 	
@@ -45,17 +45,6 @@ public class Main
 		catch (InterruptedException e)
 		{
 			e.printStackTrace();
-		}
-		
-	}
-
-
-	private static void calculate()
-	{
-		Actor[] a = Frame.w.actors;
-		for(int i=0; i<a.length; i++)
-		{
-			a[i].act();
 		}
 		
 	}
