@@ -44,6 +44,18 @@ public class Frame extends JFrame
 
 	public void draw(Graphics g)
 	{
+		if(Main.FrameStatus == 0)
+		{
+			setMenu(g);
+		}
+		if(Main.FrameStatus == 1)
+		{
+			setIngame(g);
+		}
+	}
+	
+	public void setIngame(Graphics g)
+	{
 		setBackground(w, g);
 		setActors(w, g);
 		setLifebar(w, g);
@@ -51,6 +63,14 @@ public class Frame extends JFrame
 		setCreditcounter(w, g);
 		setInventory(w, g);
 	}
+
+	public void setMenu(Graphics g)
+	{
+		setButtons(g);
+	}
+
+
+
 	public void calculate()
 	{
 		
@@ -66,7 +86,10 @@ public class Frame extends JFrame
 
 	
 	
-
+	public void setButtons(Graphics g)
+	{
+		
+	}
 	
 	public void setInventory(World world, Graphics f)
 	{
