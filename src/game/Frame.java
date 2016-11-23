@@ -44,13 +44,15 @@ public class Frame extends JFrame
 
 	public void draw(Graphics g)
 	{
-		if(Main.FrameStatus == 0)
-		{
-			setMenu(g);
-		}
-		if(Main.FrameStatus == 1)
-		{
-			setIngame(g);
+		switch(Main.gs)
+		{	
+			case INGAME:
+				setIngame(g);
+				break;
+			
+			default:
+				setMenu(g);
+				break;
 		}
 	}
 	
@@ -73,8 +75,20 @@ public class Frame extends JFrame
 
 	public void calculate()
 	{
-		
-		if(Main.FrameStatus == 1)
+		switch(Main.gs)
+		{
+			case INGAME:
+				Actor[] a = Frame.w.actors;
+				for(int i=0; i<a.length; i++)
+				{
+					a[i].act();
+				}
+				break;
+				
+			default:
+				checkButtons();
+		}
+		if(Main.gs == GameState.INGAME)
 		{
 			Actor[] a = Frame.w.actors;
 			for(int i=0; i<a.length; i++)
