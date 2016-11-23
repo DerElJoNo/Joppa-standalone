@@ -8,9 +8,9 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 
+import game.Main.GameState;
 import game.Levels.No1;
 
 public class Frame extends JFrame
@@ -101,6 +101,26 @@ public class Frame extends JFrame
 	
 	
 	public void setButtons(Graphics g)
+	{
+		createButton("Play",1,g);
+		createButton("Options",2,g);
+		createButton("Select Level",3,g);
+		createButton("Quit Game",4,g);
+	}
+	
+	private void createButton(String s, int pos, Graphics g)
+	{
+		Font font = new Font("MONOSPACED",Font.BOLD,30);
+
+		g.setColor(Color.DARK_GRAY);
+		g.fillRect(this.getWidth()/2-200, 100*pos, 400, 80);
+
+		g.setColor(Color.WHITE);
+		g.setFont(font);
+		g.drawString(s,this.getWidth()/2 - 150, 100*pos + font.getSize()*3/2);
+	}
+
+	public void checkButtons()
 	{
 		
 	}

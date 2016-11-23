@@ -11,7 +11,8 @@ public class Main
 {
 
 
-	public static int FrameStatus = 0;
+	public static enum GameState {MENU, INGAME, OPTIONS, LEVELSELECT}
+	public static GameState gs = GameState.MENU;
 	public static void main(String[] args)
 	{
 		
