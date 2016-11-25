@@ -3,6 +3,7 @@ package game;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -18,6 +19,8 @@ public class Frame extends JFrame
 	
 	private static final long serialVersionUID = -9213211594897249162L;
 	private BufferStrategy bs;
+	Graphics g;
+	MenuButton[] buttons = new MenuButton[4];
 	public static World w = new No1();//TODO Level Organisieren
 	
 	
@@ -68,7 +71,7 @@ public class Frame extends JFrame
 
 	public void setMenu(Graphics g)
 	{
-		setButtons(g);
+		drawButtons(g);
 	}
 
 
@@ -87,6 +90,7 @@ public class Frame extends JFrame
 				
 			default:
 				checkButtons();
+				loginButtons();
 		}
 		if(Main.gs == GameState.INGAME)
 		{
@@ -98,31 +102,98 @@ public class Frame extends JFrame
 		}
 	}
 
-	
-	
-	public void setButtons(Graphics g)
+	public void loginButtons()
 	{
-		createButton("Play",1,g);
-		createButton("Options",2,g);
-		createButton("Select Level",3,g);
-		createButton("Quit Game",4,g);
+		if(Keyboard.isKeyDown(KeyEvent.VK_ENTER))
+		{
+			int selected = 0;
+			if(buttons != null)
+			{
+				for(int i = 0; i < buttons.length; i++)
+				{
+					if(buttons[i].isSelected)
+					{
+						selected = i;
+						
+						break;
+					}
+				}
+			}
+			
+			if(selected == 0)
+				{
+					Main.gs = GameState.INGAME;
+				}
+			else if(selected == 1)
+				{
+					
+				}
+			else if(selected == 2)
+				{
+					
+				}
+			else if(selected == 3)
+				{
+					System.exit(0);
+				}
+		}
 	}
 	
-	private void createButton(String s, int pos, Graphics g)
+	
+	public void setButtons()
 	{
-		Font font = new Font("MONOSPACED",Font.BOLD,30);
-
-		g.setColor(Color.DARK_GRAY);
-		g.fillRect(this.getWidth()/2-200, 100*pos, 400, 80);
-
-		g.setColor(Color.WHITE);
-		g.setFont(font);
-		g.drawString(s,this.getWidth()/2 - 150, 100*pos + font.getSize()*3/2);
+		buttons[0]= createButton("Play",1);
+		buttons[1]= createButton("Options",2);
+		buttons[2]= createButton("Select Level",3);
+		buttons[3]= createButton("Quit Game",4);
+		buttons[0].isSelected = true;
+	}
+	
+	public void drawButtons(Graphics g)
+	{
+		for(int i = 0; i<buttons.length; i++)
+		{
+			buttons[i].createImage(g);
+		}
+	}
+	
+	private MenuButton createButton(String s, int pos)
+	{
+		return new MenuButton(40, pos*120, s);
 	}
 
 	public void checkButtons()
 	{
+		int selected = 0;
+		if(buttons != null)
+		{
+			for(int i = 0; i < buttons.length; i++)
+			{
+				if(buttons[i].isSelected)
+				{
+					selected = i;
+					
+					break;
+				}
+			}
+		}
 		
+		int oldSelected = selected;
+		if(Keyboard.isKeyDown(KeyEvent.VK_DOWN))
+			{
+				selected++;
+				if(selected == buttons.length)
+					selected = 0;
+			}
+		else if(Keyboard.isKeyDown(KeyEvent.VK_UP))
+			{
+				selected--;
+				if(selected <0)
+					selected = buttons.length-1;
+			}
+		
+		buttons[oldSelected].isSelected = false;
+		buttons[selected].isSelected = true;
 	}
 	
 	public void setInventory(World world, Graphics f)

@@ -4,6 +4,8 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
+import game.Main.GameState;
+
 public class Joppa extends Actor
 {
 	public int life=100;
@@ -47,6 +49,7 @@ public class Joppa extends Actor
         setItem();
         eat();
         flipSwitch();
+        endGame();
     }
 
     public Inventory inv()
@@ -227,6 +230,14 @@ public class Joppa extends Actor
             life = 100;
             air = 100;
         }
+    }
+    
+    public void endGame()
+    {
+    	if(Keyboard.isKeyDown(KeyEvent.VK_ESCAPE))
+    	{
+    		Main.gs = GameState.MENU;
+    	}
     }
 
     

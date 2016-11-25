@@ -20,10 +20,11 @@ public class Main
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		frame.getContentPane().setBackground(Color.BLACK);
-		frame.setUndecorated(false);
+		frame.setUndecorated(true);
 		frame.setVisible(true);
 		
 		frame.makeBS();
+		frame.setButtons();
 		
 		
 		while(true)
