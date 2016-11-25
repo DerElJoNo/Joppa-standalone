@@ -21,7 +21,7 @@ public class Frame extends JFrame
 	private BufferStrategy bs;
 	Graphics g;
 	MenuButton[] buttons = new MenuButton[5];
-	public static World w = new No2();//TODO Level Organisieren
+	public World w = new No2();//TODO Level Organisieren
 	
 	
 	public Frame()
@@ -81,7 +81,7 @@ public class Frame extends JFrame
 		switch(Main.gs)
 		{
 			case INGAME:
-				Actor[] a = Frame.w.actors;
+				Actor[] a = w.actors;
 				for(int i=0; i<a.length; i++)
 				{
 					a[i].act();
@@ -94,7 +94,7 @@ public class Frame extends JFrame
 		}
 		if(Main.gs == GameState.INGAME)
 		{
-			Actor[] a = Frame.w.actors;
+			Actor[] a = w.actors;
 			for(int i=0; i<a.length; i++)
 			{
 				a[i].act();

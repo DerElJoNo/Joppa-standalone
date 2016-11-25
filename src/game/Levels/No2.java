@@ -4,6 +4,7 @@ import game.Cake;
 import game.Door;
 import game.FinishingPost;
 import game.Fire;
+import game.Joppa;
 import game.Key;
 import game.Level;
 import game.Start;
@@ -17,7 +18,7 @@ public class No2 extends Level
 		setLevel(2);
         no2();
         setStandart(); 
-        setPlayer(unit(30), unit(34));  
+        setPlayer(unit(30), unit(34));
     }
     
     public void no2()

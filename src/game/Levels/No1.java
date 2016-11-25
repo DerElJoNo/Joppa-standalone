@@ -2,6 +2,7 @@ package game.Levels;
 
 import game.Door;
 import game.FinishingPost;
+import game.Joppa;
 import game.Key;
 import game.Level;
 import game.Wall;
@@ -14,7 +15,7 @@ public class No1 extends Level
     	setLevel(1);  
         setStandart();
         no1();
-        setPlayer(unit(51), unit(34));  
+        setPlayer(unit(51), unit(34));
     }
     
     public void no1()

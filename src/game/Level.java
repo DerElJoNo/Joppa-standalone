@@ -71,9 +71,8 @@ public class Level extends World
 	    
     public void setPlayer(int x, int y)
     {
-        addObject(start, x, y);
+        this.addObject(start, x, y);
         this.addObject(Joppa.getInstance(), x, y);
-        Joppa.getInstance().setLocation(x, y);
     }    
 	    
     

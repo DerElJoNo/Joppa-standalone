@@ -15,6 +15,7 @@ public class FinishingPost extends Actor
         {
             Level level = (Level) getWorld();
             Level nextLevel = (LevelManager.getInstance()).getNextLevel(level);
+            Joppa.getInstance().world = nextLevel;
             LevelManager.getInstance().setWorld(LevelManager.getInstance().getNextLevel(nextLevel));
         }
     }
