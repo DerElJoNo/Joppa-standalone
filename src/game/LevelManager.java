@@ -1,4 +1,4 @@
-package game;
+ package game;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ public class LevelManager
         levelList = new ArrayList<Level>();
         levelList.add(0, new No1()); // Level 1
         levelList.add(1, new No2()); // Level 2
-        levelList.add(1, new No3()); // Level 3
+        levelList.add(2, new No3()); // Level 3
     }
     
     

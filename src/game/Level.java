@@ -12,12 +12,11 @@ public class Level extends World
 	int y;
 	int level;
 	BufferedImage image;
-	Joppa joppa;
 	Start start = new Start();
 	    
 	public Level() 
 	{
-		joppa = new Joppa();
+		
 	}
 	    
 	public void newWallRow(int x1, int y1, int x2, int y2)
@@ -73,8 +72,8 @@ public class Level extends World
     public void setPlayer(int x, int y)
     {
         addObject(start, x, y);
-        this.addObject(joppa, x, y);
-        joppa.setLocation(x, y);
+        this.addObject(Joppa.getInstance(), x, y);
+        Joppa.getInstance().setLocation(x, y);
     }    
 	    
     
@@ -91,12 +90,6 @@ public class Level extends World
             addObject(new Wall(), MIDDLE, b);
             addObject(new Wall(), getWidth() - MIDDLE, b);
         }
-    }
-	    
-    
-    public Joppa getJoppa()
-    {
-        return joppa;
     }
     
     public void setImage(String s)

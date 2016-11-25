@@ -12,7 +12,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 import game.Main.GameState;
-import game.Levels.No1;
+import game.Levels.*;
 
 public class Frame extends JFrame
 {
@@ -20,8 +20,8 @@ public class Frame extends JFrame
 	private static final long serialVersionUID = -9213211594897249162L;
 	private BufferStrategy bs;
 	Graphics g;
-	MenuButton[] buttons = new MenuButton[4];
-	public static World w = new No1();//TODO Level Organisieren
+	MenuButton[] buttons = new MenuButton[5];
+	public static World w = new No2();//TODO Level Organisieren
 	
 	
 	public Frame()
@@ -34,7 +34,7 @@ public class Frame extends JFrame
 		createBufferStrategy(2);
 		bs = getBufferStrategy();
 	}
-
+	
 	public void repaint()
 	{
 		Graphics g = bs.getDrawGraphics();
@@ -134,6 +134,10 @@ public class Frame extends JFrame
 				}
 			else if(selected == 3)
 				{
+					
+				}
+			else if(selected == 4)
+				{
 					System.exit(0);
 				}
 		}
@@ -145,7 +149,8 @@ public class Frame extends JFrame
 		buttons[0]= createButton("Play",1);
 		buttons[1]= createButton("Options",2);
 		buttons[2]= createButton("Select Level",3);
-		buttons[3]= createButton("Quit Game",4);
+		buttons[3]= createButton("Create Levels",4);
+		buttons[4]= createButton("Quit Game",5);
 		buttons[0].isSelected = true;
 	}
 	
@@ -198,8 +203,6 @@ public class Frame extends JFrame
 	
 	public void setInventory(World world, Graphics f)
 	{
-		 Level l = (Level)world;
-	     Joppa j = l.joppa;
 	     BufferedImage image = null;
 	     int size = 16;
 	     try
@@ -211,14 +214,14 @@ public class Frame extends JFrame
 			 e.printStackTrace();
 		 }   
 	     
-	     for(int i=0; i< j.inv.size(); i++)
+	     for(int i=0; i< Joppa.getInstance().inv.size(); i++)
 	     {
-	    	 Item item = j.inv.inventory[i];
-	    	 f.drawImage(image, transformX(world, 0) + world.getWidth()/2 - (j.inv.size() * size / 2) + size * i,
+	    	 Item item = Joppa.getInstance().inv.inventory[i];
+	    	 f.drawImage(image, transformX(world, 0) + world.getWidth()/2 - (Joppa.getInstance().inv.size() * size / 2) + size * i,
 	    	 transformY(world, 0) + size, null);
 	    	 if(item!=null)
 	    	 {
-	    		 f.drawImage(item.itemPicture, transformX(world, 0) + world.getWidth()/2 - (j.inv.size() * size / 2) + size * i,
+	    		 f.drawImage(item.itemPicture, transformX(world, 0) + world.getWidth()/2 - (Joppa.getInstance().inv.size() * size / 2) + size * i,
 	    		 transformY(world, 0) + size, null);
 	    	 }
 	     }
@@ -251,9 +254,7 @@ public class Frame extends JFrame
 	
 	public void setLifebar(World world, Graphics f)
 	{
-		Level l = (Level)world;
-		Joppa joppa = l.getJoppa();
-        int life = joppa.getLife();
+        int life = Joppa.getInstance().getLife();
         int x = transformX(world, 0);
         int y = transformY(world, 0);
         int unit = 16;
@@ -279,9 +280,7 @@ public class Frame extends JFrame
 	
 	public void setAirbar(World world, Graphics f)
 	{
-		Level l = (Level)world;
-		Joppa joppa = l.getJoppa();
-        int air = joppa.getAir();
+        int air = Joppa.getInstance().getAir();
         int x = transformX(world, 0);
         int y = transformY(world, 0);
         int unit = 16;
@@ -303,8 +302,7 @@ public class Frame extends JFrame
 	
 	public void setCreditcounter(World world, Graphics f)
 	{
-		Level l = (Level) world;
-		float credits = l.joppa.credits;
+		float credits = Joppa.getInstance().credits;
         int unit = 16;
 		int x = transformX(world, 0) + unit*43;
         int y = transformY(world, 0) + unit*1;

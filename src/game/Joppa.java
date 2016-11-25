@@ -8,6 +8,8 @@ import game.Main.GameState;
 
 public class Joppa extends Actor
 {
+	private static final Joppa INSTANCE = new Joppa();
+	
 	public int life=100;
     public int air=100;
     public Inventory inv;
@@ -240,7 +242,6 @@ public class Joppa extends Actor
     	}
     }
 
-    
     public void move()
     {
 
@@ -476,4 +477,9 @@ public class Joppa extends Actor
         setLocation(getX()-XChange, getY()-YChange);
         return a;
     }
+
+	public static Joppa getInstance()
+	{
+		return INSTANCE;
+	}
 }
