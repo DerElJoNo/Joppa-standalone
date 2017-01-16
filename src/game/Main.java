@@ -32,7 +32,7 @@ public class Main
 			frame.calculate();
 			
 			frame.repaint();
-			
+	    
 			pause();
 		}
 	}

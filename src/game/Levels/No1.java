@@ -2,7 +2,6 @@ package game.Levels;
 
 import game.Door;
 import game.FinishingPost;
-import game.Joppa;
 import game.Key;
 import game.Level;
 import game.Wall;

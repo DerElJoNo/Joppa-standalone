@@ -14,9 +14,7 @@ public class FinishingPost extends Actor
         if(getOneIntersectingObject(Joppa.class)!=null && Keyboard.isKeyDown(KeyEvent.VK_O))
         {
             Level level = (Level) getWorld();
-            Level nextLevel = (LevelManager.getInstance()).getNextLevel(level);
-            Joppa.getInstance().world = nextLevel;
-            LevelManager.getInstance().setWorld(LevelManager.getInstance().getNextLevel(nextLevel));
+            LevelManager.getInstance().setWorld(LevelManager.getInstance().getNextLevel(level));
         }
     }
 }

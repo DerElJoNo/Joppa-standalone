@@ -52,6 +52,9 @@ public class Joppa extends Actor
         eat();
         flipSwitch();
         endGame();
+		Joppa.getInstance().world = LevelManager.getInstance().world;
+
+        System.out.println(world);
     }
 
     public Inventory inv()
@@ -224,8 +227,7 @@ public class Joppa extends Actor
     {
         if(Keyboard.isKeyDown(KeyEvent.VK_R)||life<=0)
         {
-            World world = getWorld();
-            Level w = (Level)world;
+            Level w = (Level)LevelManager.getInstance().world;
             Start start = w.start;
             w.setPlayer(start.getX(), start.getY());
             setImage("Joppa_links.png");

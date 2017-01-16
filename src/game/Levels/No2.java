@@ -4,7 +4,6 @@ import game.Cake;
 import game.Door;
 import game.FinishingPost;
 import game.Fire;
-import game.Joppa;
 import game.Key;
 import game.Level;
 import game.Start;

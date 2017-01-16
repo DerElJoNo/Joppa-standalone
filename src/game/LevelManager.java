@@ -10,6 +10,7 @@ public class LevelManager
 
 	List<Level> levelList;
     private static final LevelManager INSTANCE = new LevelManager();
+    public World world;
     
     
     public Level getLevel(int i)
@@ -21,11 +22,12 @@ public class LevelManager
     public Level getNextLevel(Level level)
     {
         int index = levelList.indexOf(level);
-        return levelList.get(index + 1);
+        return levelList.get(index+1);
     }
     
     private LevelManager()
     {
+    	world = new No1();
         levelList = new ArrayList<Level>();
         levelList.add(0, new No1()); // Level 1
         levelList.add(1, new No2()); // Level 2
@@ -41,7 +43,7 @@ public class LevelManager
 
 	public void setWorld(Level level)
 	{
-		Frame.w = level;
+		INSTANCE.world = level;
 	}
 
 }

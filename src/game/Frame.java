@@ -12,7 +12,6 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 import game.Main.GameState;
-import game.Levels.*;
 
 public class Frame extends JFrame
 {
@@ -21,7 +20,6 @@ public class Frame extends JFrame
 	private BufferStrategy bs;
 	Graphics g;
 	MenuButton[] buttons = new MenuButton[5];
-	public World w = new No2();//TODO Level Organisieren
 	
 	
 	public Frame()
@@ -42,8 +40,6 @@ public class Frame extends JFrame
 		g.dispose();
 		bs.show();
 	}
-	
-	
 
 	public void draw(Graphics g)
 	{
@@ -61,6 +57,8 @@ public class Frame extends JFrame
 	
 	public void setIngame(Graphics g)
 	{
+		World w = LevelManager.getInstance().world;
+		
 		setBackground(w, g);
 		setActors(w, g);
 		setLifebar(w, g);
@@ -78,6 +76,8 @@ public class Frame extends JFrame
 
 	public void calculate()
 	{
+		World w = LevelManager.getInstance().world;
+		
 		switch(Main.gs)
 		{
 			case INGAME:

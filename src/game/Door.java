@@ -20,5 +20,4 @@ public class Door extends Block implements Unrushthroughable
         permeable = false;
         setImage("Tür(geschlossen).png");
     }
-
 }
