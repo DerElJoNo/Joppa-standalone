@@ -6,6 +6,8 @@ import java.awt.Color;
 
 import javax.swing.JFrame;
 
+import game.userInteraction.Frame;
+
 
 public class Main
 {
