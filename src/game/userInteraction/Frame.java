@@ -62,6 +62,8 @@ public class Frame extends JFrame
 		}
 	}
 	
+	
+	
 	public void setIngame(Graphics g)
 	{
 		World w = LevelManager.getInstance().world;
@@ -79,6 +81,10 @@ public class Frame extends JFrame
 		drawButtons(g);
 	}
 
+	public void setLevelCreation(Graphics g)
+	{
+		
+	}
 
 
 	public void calculate()
