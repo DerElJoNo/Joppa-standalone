@@ -13,7 +13,7 @@ public class Main
 {
 
 
-	public static enum GameState {MENU, INGAME, OPTIONS, LEVELSELECT}
+	public static enum GameState {MENU, INGAME, LEVELCREATION, OPTIONS, LEVELSELECT}
 	public static GameState gs = GameState.MENU;
 	public static void main(String[] args)
 	{

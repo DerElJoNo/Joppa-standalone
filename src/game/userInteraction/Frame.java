@@ -55,7 +55,9 @@ public class Frame extends JFrame
 			case INGAME:
 				setIngame(g);
 				break;
-			
+			case LEVELCREATION:
+				setLevelCreation(g);
+				
 			default:
 				setMenu(g);
 				break;
@@ -83,7 +85,20 @@ public class Frame extends JFrame
 
 	public void setLevelCreation(Graphics g)
 	{
+		World w = LevelManager.getInstance().world;
 		
+		try
+		{
+			g.drawImage(ImageIO.read(getClass().getClassLoader().getResourceAsStream("graphics/no2.jpg")), transformX(w, 0), transformY(w, 0), null);
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+		setLifebar(w, g);
+		setAirbar(w, g);
+		setCreditcounter(w, g);
+		setInventory(w, g);
 	}
 
 
@@ -104,14 +119,6 @@ public class Frame extends JFrame
 			default:
 				checkButtons();
 				loginButtons();
-		}
-		if(Main.gs == GameState.INGAME)
-		{
-			Actor[] a = w.actors;
-			for(int i=0; i<a.length; i++)
-			{
-				a[i].act();
-			}
 		}
 	}
 
@@ -147,7 +154,7 @@ public class Frame extends JFrame
 				}
 			else if(selected == 3)
 				{
-					
+					Main.gs = GameState.LEVELCREATION;
 				}
 			else if(selected == 4)
 				{
